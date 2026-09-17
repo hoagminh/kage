@@ -1,75 +1,51 @@
-# React + TypeScript + Vite
+# 🏯 Kage - 3D WebGL Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern WebGL / 3D Landing Page built with **React**, **Three.js / WebGL**, and **Vite**. The website features an interactive 3D environment of Japanese temple architecture (Kyoto), fully generated via procedural algorithms and custom shaders (GLSL) for maximum performance and lightning-fast loading speeds.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📽 Demo Recording
 
-## React Compiler
+![Kage 3D Demo](./src/assets/kage_demo.webp)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠 Installation & Setup
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### System Requirements
+- **Node.js**: >= v18.0.0
+- **Package Manager**: `bun` (recommended) or `npm` / `yarn`
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+### 1. Install Dependencies
+```bash
+bun install
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+### 2. Start Development Server
+```bash
+bun run dev
 ```
+Access the application at: `http://localhost:5173/`
+
+### 3. Build for Production
+```bash
+bun run build
+```
+The optimized production build will be generated in the `dist/` directory.
+
+### 4. Preview Production Build
+```bash
+bun run preview
+```
+
+---
+
+## 📖 Usage Guide
+
+1. **Experience the 3D Environment**:
+   - Visit the homepage to observe the 3D Sanmon temple scene featuring a vermilion moon, falling maple leaves, and real-time volumetric fog.
+2. **Scroll Interaction (Camera Movement)**:
+   - Scroll down to seamlessly move the camera deep into the 3D scene, transitioning and revealing content for each Chapter.
+   - Scroll back up to return to the main interface.
+3. **Navigation Bar**:
+   - Quickly jump to specific sections using the top-right menu: *Temples*, *Gardens*, *Rituals*, *Afterlight*.
